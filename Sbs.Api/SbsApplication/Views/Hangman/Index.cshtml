@@ -1,0 +1,105 @@
+﻿@model SbsApplication.Models.HangmanWordModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Happy Playing Hangman!</h1>
+</div>
+
+<hr />
+<br />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Index">
+            @*<div class="form-group">
+                <input type="submit" value="Easy" class="btn btn-primary" asp-action="Easy" asp-controller="Hangman" />
+                <input type="submit" value="Moderate" class="btn btn-primary" asp-action="Moderate" asp-controller="Hangman" />
+                <input type="submit" value="Hard" class="btn btn-primary" asp-action="Hard" asp-controller="Hangman" />
+            </div>*@
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Chances" class="control-label"></label>
+                @Html.DisplayFor(model => model.Chances)
+            </div>
+            <div class="form-group">
+                @Html.DisplayFor(model => model.GameMessage)
+            </div>
+            <div class="form-group">
+                <label asp-for="LettersAttempted" class="control-label"></label>
+                @Html.DisplayFor(model => model.LettersAttempted)
+            </div>
+            <div class="form-group" dir="ltr">
+                @foreach (string str in Model.HangmanWordList)
+                {
+                    @Html.Raw(" ")
+                    @Html.Raw(@str)
+                    @Html.Raw(" ")
+                }
+            </div>
+            <div class="form-group">
+                <input type="submit" value="A" class="btn btn-primary" asp-action="A" asp-controller="Hangman" />
+                <input type="submit" value="E" class="btn btn-primary" asp-action="E" asp-controller="Hangman" />
+                <input type="submit" value="I" class="btn btn-primary" asp-action="I" asp-controller="Hangman" />
+                <input type="submit" value="O" class="btn btn-primary" asp-action="O" asp-controller="Hangman" />
+                <input type="submit" value="U" class="btn btn-primary" asp-action="U" asp-controller="Hangman" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="B" class="btn btn-primary" asp-action="B" asp-controller="Hangman" />
+                <input type="submit" value="C" class="btn btn-primary" asp-action="C" asp-controller="Hangman" />
+                <input type="submit" value="D" class="btn btn-primary" asp-action="D" asp-controller="Hangman" />
+                <input type="submit" value="F" class="btn btn-primary" asp-action="F" asp-controller="Hangman" />
+                <input type="submit" value="G" class="btn btn-primary" asp-action="G" asp-controller="Hangman" />
+                <input type="submit" value="H" class="btn btn-primary" asp-action="H" asp-controller="Hangman" />
+                <input type="submit" value="J" class="btn btn-primary" asp-action="J" asp-controller="Hangman" />
+
+            </div>
+            <div class="form-group">
+                <input type="submit" value="K" class="btn btn-primary" asp-action="K" asp-controller="Hangman" />
+                <input type="submit" value="L" class="btn btn-primary" asp-action="L" asp-controller="Hangman" />
+                <input type="submit" value="M" class="btn btn-primary" asp-action="M" asp-controller="Hangman" />
+                <input type="submit" value="N" class="btn btn-primary" asp-action="N" asp-controller="Hangman" />
+                <input type="submit" value="P" class="btn btn-primary" asp-action="P" asp-controller="Hangman" />
+                <input type="submit" value="Q" class="btn btn-primary" asp-action="Q" asp-controller="Hangman" />
+                <input type="submit" value="R" class="btn btn-primary" asp-action="R" asp-controller="Hangman" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="S" class="btn btn-primary" asp-action="S" asp-controller="Hangman" />
+                <input type="submit" value="T" class="btn btn-primary" asp-action="T" asp-controller="Hangman" />
+                <input type="submit" value="V" class="btn btn-primary" asp-action="V" asp-controller="Hangman" />
+                <input type="submit" value="W" class="btn btn-primary" asp-action="W" asp-controller="Hangman" />
+                <input type="submit" value="X" class="btn btn-primary" asp-action="X" asp-controller="Hangman" />
+                <input type="submit" value="Y" class="btn btn-primary" asp-action="Y" asp-controller="Hangman" />
+                <input type="submit" value="Z" class="btn btn-primary" asp-action="Z" asp-controller="Hangman" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Quit" class="btn btn-primary" asp-action="Quit" asp-controller="Hangman" />
+                <input type="submit" value="Replay" class="btn btn-primary" asp-action="Replay" asp-controller="Hangman" />
+            </div>
+        </form>
+    </div>
+</div>
+@*<div class="row">
+        <div class="col-md-4">
+            <form asp-action="Index">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="col">
+                    <ul>
+                        @foreach (string str in Model.HangmanWord)
+                        {
+                            <li>@str</li>
+                        }
+                    </ul>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+
+            </form>
+        </div>
+    </div>*@
+
+<div>
+    <a asp-controller="Home" asp-action="Index">Signout</a>
+</div>

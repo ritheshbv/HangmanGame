@@ -1,0 +1,39 @@
+﻿@model SbsApplication.Models.LoginViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome To Hangman App</h1>
+</div>
+
+<hr/>
+<br/>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Login">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <input asp-for="LoginName" class="form-control" placeholder="UserName" />
+                <span asp-validation-for="LoginName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="Password" class="form-control" placeholder="Password" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="form-group">
+                    <p class="button">
+                        <a class="btn btn-primary"
+                           asp-controller="Home"
+                           asp-action="SignIn"> Signin</a>
+                    </p>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div>
+    <a asp-action="Register">Sign Up</a>
+</div>

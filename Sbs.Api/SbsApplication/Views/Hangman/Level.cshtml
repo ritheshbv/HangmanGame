@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewData["Title"] = "Level";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Happy Playing Hangman!</h1>
+</div>
+
+<hr />
+<br />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Level">
+            <div class="form-group">
+                <input type="submit" value="Easy" class="btn btn-primary" asp-action="Easy" asp-controller="Hangman" />
+                <input type="submit" value="Moderate" class="btn btn-primary" asp-action="Moderate" asp-controller="Hangman" />
+                <input type="submit" value="Hard" class="btn btn-primary" asp-action="Hard" asp-controller="Hangman" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Play" class="btn btn-primary" asp-action="Play" asp-controller="Hangman" />
+            </div>
+        </form>
+    </div>
+</div>

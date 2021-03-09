@@ -1,0 +1,46 @@
+﻿@model SbsApplication.Models.UserViewModel
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome To Hangman App</h1>
+</div>
+
+
+<hr />
+<br />
+
+<div class="col-md-4">
+    <form asp-action="Register">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <input asp-for="Name" class="form-control" placeholder="Name" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input asp-for="Address" class="form-control" placeholder="Address" />
+            <span asp-validation-for="Address" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input asp-for="LoginName" class="form-control" placeholder="UserName" />
+            <span asp-validation-for="LoginName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="password" asp-for="Password" class="form-control" placeholder="Password" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Create" class="btn btn-primary" asp-action="Create" asp-controller="Home" />
+        </div>
+    </form>
+</div>
+
+<div>
+    <a asp-action="Index">Go to Login Page</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
