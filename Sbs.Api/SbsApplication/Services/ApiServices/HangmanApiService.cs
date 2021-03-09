@@ -18,7 +18,6 @@ namespace SbsApplication.Services.ApiServices
             client = new HttpClient();
             client.BaseAddress = baseAddress;
         }
-
         public async Task<string> GetWord(int level)
         {
             var address = client.BaseAddress + level.ToString();
