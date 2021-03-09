@@ -37,7 +37,6 @@ namespace SbsApplication.Services.ApiServices
             {
                 string returnData = response.Content.ReadAsStringAsync().Result;
                 var newData = JsonConvert.DeserializeObject<LoginViewModel>(returnData);
-
                 return newData;
             }
 

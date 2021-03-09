@@ -8,7 +8,6 @@ namespace SbsApplication.Services.ApiServices
     {
         Task<string> GetWord(int level);
     }
-
     public class HangmanApiService : IHangmanApiService
     {
         Uri baseAddress = new Uri("http://localhost:3688/api/Hangman/");
